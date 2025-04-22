@@ -1,0 +1,263 @@
+/* Vatican-inspired color palette */
+:root {
+  --vatican-gold: #D4AF37;
+  --vatican-cream: #F5F5DC;
+  --vatican-red: #9B2335;
+  --vatican-deep-red: #5D1725;
+  --vatican-gray: #444444;
+  --vatican-light-gray: #E5E5E5;
+  --vatican-white: #FFFFFF;
+}
+
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lora', Georgia, serif;
+  line-height: 1.6;
+  color: var(--vatican-gray);
+  background-color: var(--vatican-cream);
+}
+
+header {
+  background-color: var(--vatican-red);
+  color: var(--vatican-white);
+  padding: 2rem 0;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+  font-family: 'Cinzel', Georgia, serif;
+  margin-bottom: 1rem;
+  color: var(--vatican-deep-red);
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 3px solid var(--vatican-gold);
+}
+
+h2 {
+  font-size: 2rem;
+  border-left: 5px solid var(--vatican-gold);
+  padding-left: 1rem;
+  margin-top: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+p {
+  margin-bottom: 1.2rem;
+}
+
+a {
+  color: var(--vatican-red);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--vatican-gold);
+  text-decoration: underline;
+}
+
+/* Candidate cards for index page */
+.candidates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.candidate-card {
+  background-color: var(--vatican-white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.candidate-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.candidate-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-bottom: 3px solid var(--vatican-gold);
+}
+
+.candidate-card-content {
+  padding: 1.5rem;
+}
+
+.candidate-card h3 {
+  margin-top: 0;
+  font-size: 1.25rem;
+}
+
+.candidate-meta {
+  font-style: italic;
+  color: var(--vatican-gray);
+  margin-bottom: 1rem;
+}
+
+/* Individual candidate page */
+.candidate-header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.candidate-image {
+  flex: 0 0 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 3px solid var(--vatican-gold);
+}
+
+.candidate-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.candidate-info {
+  flex: 1;
+  min-width: 300px;
+}
+
+.section {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--vatican-light-gray);
+}
+
+.section:last-child {
+  border-bottom: none;
+}
+
+/* References section */
+.references {
+  background-color: var(--vatican-light-gray);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+}
+
+.references h2 {
+  border-left: none;
+  padding-left: 0;
+  border-bottom: 2px solid var(--vatican-gold);
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.references ul {
+  list-style-type: none;
+  margin-top: 1rem;
+}
+
+.references li {
+  margin-bottom: 0.8rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.references li::before {
+  content: "•";
+  color: var(--vatican-gold);
+  font-size: 1.2rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* Back button */
+.back-button {
+  display: inline-block;
+  margin-bottom: 2rem;
+  padding: 0.6rem 1.2rem;
+  background-color: var(--vatican-red);
+  color: var(--vatican-white);
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.back-button:hover {
+  background-color: var(--vatican-deep-red);
+  text-decoration: none;
+}
+
+/* Footer */
+footer {
+  background-color: var(--vatican-deep-red);
+  color: var(--vatican-white);
+  text-align: center;
+  padding: 2rem 0;
+  margin-top: 3rem;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  .candidate-header {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .candidate-image {
+    flex: 0 0 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 95%;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  .candidates-grid {
+    grid-template-columns: 1fr;
+  }
+}
